@@ -2,9 +2,7 @@ import os
 import json
 from glob import glob
 
-# ==========================================
-# CONFIG
-# ==========================================
+
 
 # Folder annotation JSON
 INPUT_JSON_DIR = "ann"
@@ -31,15 +29,10 @@ CLASS_MAP = {
 
 }
 
-# ==========================================
-# CREATE OUTPUT DIR
-# ==========================================
+
 
 os.makedirs(OUTPUT_LABEL_DIR, exist_ok=True)
 
-# ==========================================
-# CONVERT FUNCTION
-# ==========================================
 
 def convert_polygon_to_yolo(points, img_w, img_h):
     """
@@ -56,9 +49,7 @@ def convert_polygon_to_yolo(points, img_w, img_h):
 
     return " ".join(yolo_points)
 
-# ==========================================
-# PROCESS JSON FILES
-# ==========================================
+
 
 json_files = glob(os.path.join(INPUT_JSON_DIR, "*.json"))
 
